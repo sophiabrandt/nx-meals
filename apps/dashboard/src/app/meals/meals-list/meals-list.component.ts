@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { CustomResponse, MealDataState } from '@nxm/api-interfaces';
 
 @Component({
   selector: 'nxm-meals-list',
   templateUrl: './meals-list.component.html',
   styleUrls: ['./meals-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MealsListComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class MealsListComponent {
+  @Input()
+  mealState!: MealDataState<CustomResponse>;
 }

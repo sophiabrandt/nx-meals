@@ -1,8 +1,20 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { ApiResponse, CustomResponse, Meal, MealResponse } from '@nxm/api-interfaces';
+import {
+  ApiResponse,
+  CustomResponse,
+  Meal,
+  MealResponse,
+} from '@nxm/api-interfaces';
 import { BASE_URL } from '@nxm/shared';
-import { catchError, map, Observable, shareReplay, tap, throwError } from 'rxjs';
+import {
+  catchError,
+  map,
+  Observable,
+  shareReplay,
+  tap,
+  throwError,
+} from 'rxjs';
 import { AbstractMealsService } from './abstract-meals.service';
 
 @Injectable({
@@ -21,11 +33,12 @@ export class MealsService implements AbstractMealsService {
       ),
       map((response: ApiResponse) => {
         return {
-          meals: response.meals?.map((meal: MealResponse) => this.mapApiMealToCustomMeal(meal)
-          )
+          meals: response.meals?.map((meal: MealResponse) =>
+            this.mapApiMealToCustomMeal(meal)
+          ),
         };
       }),
-      shareReplay(1),
+      shareReplay({bufferSize: 1, refCount: true}),
       catchError(this.handleError)
     );
 
@@ -34,15 +47,15 @@ export class MealsService implements AbstractMealsService {
       name: meal.strMeal,
       image: meal.strMealThumb,
       id: meal.idMeal,
-      category: meal.strCategory ?? undefined,
-      area: meal.strArea ?? undefined,
-      instructions: meal.strInstructions ?? undefined,
-      tags: meal.strTags ?? undefined,
-      youtube: meal.strYoutube ?? undefined,
-      source: meal.strSource ?? undefined,
-      imageSource: meal.strImageSource ?? undefined,
-      creativeCommonsConfirmed: meal.strCreativeCommonsConfirmed ?? undefined,
-      dateModified: meal.dateModified ?? undefined,
+      category: meal.strCategory,
+      area: meal.strArea,
+      instructions: meal.strInstructions,
+      tags: meal.strTags,
+      youtube: meal.strYoutube,
+      source: meal.strSource,
+      imageSource: meal.strImageSource,
+      creativeCommonsConfirmed: meal.strCreativeCommonsConfirmed,
+      dateModified: meal.dateModified,
     };
   }
 

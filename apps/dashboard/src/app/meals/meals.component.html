@@ -1,1 +1,9 @@
-<p>meals works!</p>
+<ng-container
+  *ngIf="mealState$ | async as mealState"
+  [ngSwitch]="mealState.dataState"
+>
+  <ng-container *ngSwitchCase="DataState.LOADED_STATE">
+    <nxm-meals-list [mealState]="mealState"></nxm-meals-list>
+  </ng-container>
+</ng-container>
+<nxm-meals-details></nxm-meals-details>

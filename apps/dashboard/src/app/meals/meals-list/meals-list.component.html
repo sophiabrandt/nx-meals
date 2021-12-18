@@ -1,1 +1,9 @@
-<p>meals-list works!</p>
+<div class="card__container">
+  <article *ngFor="let meal of mealState.data?.meals" class="card">
+    <header>{{ meal.name }}</header>
+    <p>{{ meal.id }}</p>
+    <figure class="card__image">
+      <img [alt]="meal.name" [src]="meal.image" />
+    </figure>
+  </article>
+</div>

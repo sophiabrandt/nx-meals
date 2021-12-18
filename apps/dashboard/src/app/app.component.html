@@ -1,14 +1,26 @@
 <div class="base">
-  <header>Header</header>
-  <div class="wrapper">
-    <main>
-      <router-outlet> </router-outlet>
-    </main>
-  </div>
+  <header>
+    <a routerLink="/">nx meals</a>
+    <nav>
+      <ul class="cluster">
+        <li>
+          <a routerLink="/meals">meals</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
   <footer class="center">
     <div class="box">
       <span>Made with</span>
-      <img height="48px" src="./assets/angular.svg" width="48px" />
+      <img
+        alt="Angular Logo"
+        height="48px"
+        src="./assets/angular.svg"
+        width="48px"
+      >
     </div>
   </footer>
 </div>
