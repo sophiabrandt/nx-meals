@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'core-state',
+  displayName: 'api-interfaces',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/core-state',
+  coverageDirectory: '../../coverage/libs/api-interfaces',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

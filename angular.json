@@ -1,6 +1,32 @@
 {
   "version": 1,
   "projects": {
+    "api-interfaces": {
+      "projectType": "library",
+      "root": "libs/api-interfaces",
+      "sourceRoot": "libs/api-interfaces/src",
+      "prefix": "nxm",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api-interfaces"],
+          "options": {
+            "jestConfig": "libs/api-interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/api-interfaces/src/**/*.ts",
+              "libs/api-interfaces/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "core-data": {
       "projectType": "library",
       "root": "libs/core-data",
@@ -21,32 +47,6 @@
             "lintFilePatterns": [
               "libs/core-data/src/**/*.ts",
               "libs/core-data/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "core-state": {
-      "projectType": "library",
-      "root": "libs/core-state",
-      "sourceRoot": "libs/core-state/src",
-      "prefix": "nxm",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core-state"],
-          "options": {
-            "jestConfig": "libs/core-state/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/core-state/src/**/*.ts",
-              "libs/core-state/src/**/*.html"
             ]
           }
         }
@@ -179,6 +179,32 @@
       },
       "tags": [],
       "implicitDependencies": ["dashboard"]
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "prefix": "nxm",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared"],
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/src/**/*.ts",
+              "libs/shared/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }

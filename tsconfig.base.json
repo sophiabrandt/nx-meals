@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nxm/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@nxm/core-data": ["libs/core-data/src/index.ts"],
-      "@nxm/core-state": ["libs/core-state/src/index.ts"]
+      "@nxm/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

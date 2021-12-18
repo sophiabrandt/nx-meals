@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AbstractMealsService, CoreDataModule, MealsService } from '@nxm/core-data';
 
 import { AppComponent } from './app.component';
-import { CoreDataModule, coreDataRoutes } from '@nxm/core-data';
-import { CoreStateModule, coreStateRoutes } from '@nxm/core-state';
 import { HomeComponent } from './home/home.component';
-import { RoutingModule } from './routing.module';
-import { MealsListComponent } from './meals/meals-list/meals-list.component';
 import { MealsDetailsComponent } from './meals/meals-details/meals-details.component';
+import { MealsListComponent } from './meals/meals-list/meals-list.component';
 import { MealsComponent } from './meals/meals.component';
+import { RoutingModule } from './routing.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,9 @@ import { MealsComponent } from './meals/meals.component';
     MealsDetailsComponent,
     MealsComponent,
   ],
-  imports: [BrowserModule, CoreDataModule, CoreStateModule, RoutingModule],
-  providers: [],
+  imports: [BrowserModule, CoreDataModule, RoutingModule],
+  providers: [{ provide: AbstractMealsService, useClass: MealsService }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
