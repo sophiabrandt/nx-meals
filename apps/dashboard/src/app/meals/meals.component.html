@@ -2,6 +2,9 @@
   *ngIf="mealState$ | async as mealState"
   [ngSwitch]="mealState.dataState"
 >
+  <ng-container *ngSwitchCase="DataState.LOADING_STATE">
+    <nxm-show-loading></nxm-show-loading>
+  </ng-container>
   <ng-container *ngSwitchCase="DataState.ERROR_STATE">
     <nxm-show-error [error]="mealState.error"></nxm-show-error>
   </ng-container>

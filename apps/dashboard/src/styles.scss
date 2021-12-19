@@ -21,3 +21,7 @@ a:not([class]) {
   gap: 1ch;
   justify-content: center;
 }
+
+.center > *:only-child {
+  margin: auto;
+}
