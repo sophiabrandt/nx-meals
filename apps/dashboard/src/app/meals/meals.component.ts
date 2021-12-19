@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CustomResponse, DataState, MealDataState } from '@nxm/api-interfaces';
 import { AbstractMealsService } from '@nxm/core-data';
 import { catchError, map, Observable, of, startWith } from 'rxjs';
@@ -7,9 +7,9 @@ import { catchError, map, Observable, of, startWith } from 'rxjs';
   selector: 'nxm-meals',
   templateUrl: './meals.component.html',
   styleUrls: ['./meals.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MealsComponent implements OnInit {
-
   mealState$: Observable<MealDataState<CustomResponse>> = of({
     dataState: DataState.LOADING_STATE,
   });

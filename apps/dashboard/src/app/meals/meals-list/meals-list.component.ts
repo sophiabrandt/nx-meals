@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CustomResponse, MealDataState } from '@nxm/api-interfaces';
+import { Meal } from '@nxm/api-interfaces';
 
 @Component({
   selector: 'nxm-meals-list',
@@ -9,5 +9,5 @@ import { CustomResponse, MealDataState } from '@nxm/api-interfaces';
 })
 export class MealsListComponent {
   @Input()
-  mealState!: MealDataState<CustomResponse>;
+  meals?: Meal[];
 }

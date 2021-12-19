@@ -8,7 +8,7 @@ export interface BaseEntity {
   id: string | null;
 }
 
-export interface MealResponse extends BaseEntity {
+export interface MealResponse {
   strMeal: string;
   strMealThumb: string;
   idMeal: string;
@@ -26,7 +26,6 @@ export interface MealResponse extends BaseEntity {
 export interface Meal extends BaseEntity {
   name: string;
   image: string;
-  id: string;
   category?: string;
   area?: string;
   instructions?: string;

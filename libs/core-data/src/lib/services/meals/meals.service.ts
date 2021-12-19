@@ -1,20 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import {
-  ApiResponse,
-  CustomResponse,
-  Meal,
-  MealResponse,
-} from '@nxm/api-interfaces';
+import { ApiResponse, CustomResponse, Meal, MealResponse, } from '@nxm/api-interfaces';
 import { BASE_URL } from '@nxm/shared';
-import {
-  catchError,
-  map,
-  Observable,
-  shareReplay,
-  tap,
-  throwError,
-} from 'rxjs';
+import { catchError, map, Observable, shareReplay, tap, throwError, } from 'rxjs';
 import { AbstractMealsService } from './abstract-meals.service';
 
 @Injectable({
@@ -38,7 +26,7 @@ export class MealsService implements AbstractMealsService {
           ),
         };
       }),
-      shareReplay({bufferSize: 1, refCount: true}),
+      shareReplay({ bufferSize: 1, refCount: true }),
       catchError(this.handleError)
     );
 
