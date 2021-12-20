@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AbstractMealsService, CoreDataModule, MealsService, } from '@nxm/core-data';
+import { ErrorModule, LoadingModule } from '@nxm/shared';
 
 import { AppComponent } from './app.component';
-import { ErrorModule } from './common/error/error/error.module';
-import { LoadingModule } from './common/loading/loading/loading.module';
 import { MealsDetailsComponent } from './meals/meals-details/meals-details.component';
 import { MealsListComponent } from './meals/meals-list/meals-list.component';
 import { MealsComponent } from './meals/meals.component';
