@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AbstractMealsService, CoreDataModule, MealsService, } from '@nxm/core-data';
-import { ErrorModule, LoadingModule } from '@nxm/shared';
+import { ErrorModule, LoadingModule, TabsModule } from '@nxm/shared';
 
 import { AppComponent } from './app.component';
 import { MealsDetailsComponent } from './meals/meals-details/meals-details.component';
@@ -22,6 +22,7 @@ import { RoutingModule } from './routing.module';
     RoutingModule,
     ErrorModule,
     LoadingModule,
+    TabsModule,
   ],
   providers: [{ provide: AbstractMealsService, useClass: MealsService }],
   bootstrap: [AppComponent],

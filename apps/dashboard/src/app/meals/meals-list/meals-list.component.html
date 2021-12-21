@@ -1,11 +1,21 @@
-<div class="card__container">
-  <article *ngFor="let meal of meals"
-           class="card">
-    <header>{{ meal.name }}</header>
-    <p>{{ meal.id }}</p>
-    <figure class="card__image">
-      <img [alt]="meal.name"
-           [src]="meal.image">
-    </figure>
-  </article>
-</div>
+<nxm-tabbed-pane>
+  <nxm-tab title="Seafood">
+    <div class="card__container">
+      <article *ngFor="let meal of meals"
+               class="card">
+        <header>{{ meal.name }}</header>
+        <p>{{ meal.id }}</p>
+        <figure class="card__image">
+          <img [alt]="meal.name"
+               [src]="meal.image">
+        </figure>
+      </article>
+    </div>
+  </nxm-tab>
+
+  <nxm-tab title="Other category">
+    <div class="card__container">
+      <p>No other meals available right now!</p>
+    </div>
+  </nxm-tab>
+</nxm-tabbed-pane>

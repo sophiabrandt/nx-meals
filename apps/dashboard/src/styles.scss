@@ -1,5 +1,11 @@
-html {
-  font-family: "Syne", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+:root {
+  --font-base: "Syne", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --metric-rhythm: 1.5rem;
+}
+
+body {
+  font-family: var(--font-base),
+
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
