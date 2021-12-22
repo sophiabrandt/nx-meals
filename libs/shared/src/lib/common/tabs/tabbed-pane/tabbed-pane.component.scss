@@ -3,7 +3,7 @@
 }
 
 .tab-link {
-  border-bottom: 5px solid #33406F;
+  border-bottom: 5px solid var(--primary-color);
   font-size: 16px;
   margin-right: 10px;
   padding-bottom: 3px;
@@ -15,10 +15,10 @@
 }
 
 .tab-link a:hover {
-  color: orangered;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .tab-link a.active {
-  color: orangered;
+  color: var(--secondary-color);
 }
