@@ -1,13 +1,14 @@
-import { ChangeDetectionStrategy, Component, Input, } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 
 @Component({
   selector: 'nxm-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabComponent {
-  @Input() title = '';
+  @Input()
+  title = '';
 
+  @Input()
   visible = true;
 }

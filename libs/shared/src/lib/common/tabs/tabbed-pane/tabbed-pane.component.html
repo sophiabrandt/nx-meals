@@ -3,9 +3,7 @@
     <span *ngFor="let tab of tabs"
           class="tab-link">
       <a [ngClass]="{ active: tab === activeTab }"
-         (click)="activate(tab)">{{
-        tab.title
-        }}</a>
+         (click)="activate(tab)">{{tab.title}}</a>
     </span>
   </div>
 
