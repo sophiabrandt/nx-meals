@@ -15,6 +15,35 @@ export class MealsService implements AbstractMealsService {
   ) {}
 
   filterByCategory$ = (category: string): Observable<CustomResponse> =>
+    /* stub data */
+    // of(
+    //   {
+    //     'meals': [
+    //       {
+    //         'strMeal': 'Baked salmon with fennel & tomatoes',
+    //         'strMealThumb': 'https://api.lorem.space/image/pizza?w=150&h=150',
+    //         'idMeal': '52959'
+    //       },
+    //       {
+    //         'strMeal': 'Cajun spiced fish tacos',
+    //         'strMealThumb': 'https://api.lorem.space/image/pizza?w=150&h=150',
+    //         'idMeal': '52819'
+    //       },
+    //       {
+    //         'strMeal': 'Escovitch Fish',
+    //         'strMealThumb': 'https://api.lorem.space/image/pizza?w=150&h=150',
+    //         'idMeal': '52944'
+    //       },
+    //       {
+    //         'strMeal': 'Fish fofos',
+    //         'strMealThumb': 'https://api.lorem.space/image/pizza?w=150&h=150',
+    //         'idMeal': '53043'
+    //       }
+    //     ]
+    //   }
+    // ).pipe(
+    //   delay(800),
+    /* end of stub data */
     this.http.get<ApiResponse>(`${this.baseUrl}/filter.php?c=${category}`).pipe(
       tap((response) =>
         console.log(`%c${JSON.stringify(response)}`, 'color: green;')
