@@ -28,4 +28,8 @@ export class TabbedPaneComponent implements AfterContentInit {
     }
     this.activeTab = active;
   }
+
+  register(tab: TabComponent) {
+    this.tabs.push(tab)
+  }
 }
